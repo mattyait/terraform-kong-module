@@ -8,10 +8,11 @@ terraform {
 
 
 module "kong-services" {
-  source                 = "mattyait/module/kong"
-  version                = "0.1.0"
+  #source                 = "mattyait/module/kong"
+  #version                = "0.1.0"
+  source                 = "../"
   kong-api-create-enable = "true"
-  kong_admin_uri         = "http://10.0.5.114:8001/"
+  kong_admin_uri         = "http://10.1.1.57:8001/"
 
   kong-services-list = [
     {
@@ -23,7 +24,7 @@ module "kong-services" {
       route_name      = "findByStatus-route"
       route_protocols = ["http", "https"]
       route_methods   = ["GET"]
-      route_hosts     = ["localhost:8000"]
+      route_hosts     = ["10.1.1.57:8000"]
       route_paths     = ["/pet/findByStatus"]
     },
   ]

@@ -3,7 +3,7 @@ provider "kong" {
 }
 
 module "kong" {
-  source             = "modules/api"
+  source             = "./modules/api"
   enable             = "${var.kong-api-create-enable}"
   kong-services-list = "${var.kong-services-list}"
 }
