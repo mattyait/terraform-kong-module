@@ -8,7 +8,8 @@ terraform {
 
 
 module "kong-services" {
-  source                 = "terraform-kong-module"
+  source                 = "mattyait/module/kong"
+  version                = "0.1.0"
   kong-api-create-enable = "true"
   kong_admin_uri         = "http://10.0.5.114:8001/"
 
