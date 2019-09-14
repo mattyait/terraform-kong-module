@@ -66,7 +66,7 @@ cp ../kong-plugin/terraform-provider-kong_v5.0.0 ~/.terraform.d/plugins
           route_name      = "findByStatus-route"
           route_protocols = ["http", "https"]
           route_methods   = ["GET"]
-          route_hosts     = ["localhost:8000"]
+          route_hosts     = ["10.0.5.114:8000"]
           route_paths     = ["/pet/findByStatus"]
         },
       ]
