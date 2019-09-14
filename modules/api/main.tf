@@ -1,10 +1,10 @@
 resource "kong_service" "service" {
-  count    = "${var.enable == "true" ? length(var.kong-services-list) : 0}"
-  name     = "${var.kong-services-list[count.index]["service_name"]}"
-  protocol = "${var.kong-services-list[count.index]["service_protocol"]}"
-  host     = "${var.kong-services-list[count.index]["service_host"]}"
-  path     = "${var.kong-services-list[count.index]["service_path"]}"
-
+  count           = "${var.enable == "true" ? length(var.kong-services-list) : 0}"
+  name            = "${var.kong-services-list[count.index]["service_name"]}"
+  protocol        = "${var.kong-services-list[count.index]["service_protocol"]}"
+  host            = "${var.kong-services-list[count.index]["service_host"]}"
+  path            = "${var.kong-services-list[count.index]["service_path"]}"
+  port            = "${var.kong_service_port}"
   retries         = "${var.service_retries}"
   connect_timeout = "${var.connect_timeout}"
   write_timeout   = "${var.write_timeout}"

@@ -32,6 +32,10 @@ variable route_regex_priority {
   default = "0"
 }
 
+variable kong_service_port {
+  default = "80"
+}
+
 variable "kong-services-list" {
   description = "List of services want to create"
   type        = list
